@@ -1,0 +1,48 @@
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-primary: #0D6EFD;
+  --color-secondary: #6c757d;
+  --color-accent: #ff6f00;
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-border: #e0e0e0;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-input-bg: #ffffff;
+  --color-hover: #f1f3f5;
+  --color-footer-bg: #f8f9fa;
+}
+img{
+  max-width: 100%;
+}
+li,ul,a{
+  all: unset;
+}
+.mainButton{
+  background-color: var(--color-primary);
+  border-width: 0;
+  color: var(--color-bg);
+  padding: 6px 16px;
+}
+.mainDropDown.btn{
+  background-color: transparent;
+  color: var(--color-text);
+  border: solid 1px var(--color-primary);
+  border-radius: 0;
+  padding-inline: 20px;
+}
+.TamInput{
+  border: none;
+  padding-inline: 10px;
+}
+.TamForm{
+   outline: solid 2px var(--color-primary);
+  outline-offset: -2px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.navBarBox{
+  padding-block: 30px;
+}
