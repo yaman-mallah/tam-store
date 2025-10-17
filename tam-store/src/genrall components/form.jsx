@@ -8,7 +8,7 @@ const TamForm = ({ button, dropDown, space ,input}) => {
         <form  onSubmit={(e) => { e.preventDefault() }} className={`d-flex gap-${space} TamForm`}>
             <div className="d-flex w-100">
                 <input type="text" className='flex-grow-1 TamInput' placeholder={input}/>
-                {dropDown?<DropDown options={['cloth', 'tech', 'decore']} goal={'All category'}/>:null}
+                {dropDown?<DropDown options={['cloth', 'tech', 'decore']} goal={'All category'} border={1 }/>:null}
                 
             </div>
             <MainButton text={button} borderRadius={'0'} />

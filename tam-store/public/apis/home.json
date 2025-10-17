@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Automobiles",
+    "img": "tabsImages/Mask group.png"
+  },
+  {
+    "id": 2,
+    "title": "ClothesAndWear",
+    "img": "/images/categories/clothes-and-wear.jpg"
+  },
+  {
+    "id": 3,
+    "title": "HomeInteriors",
+    "img": "/images/categories/home-interiors.jpg"
+  },
+  {
+    "id": 4,
+    "title": "ComputerAndTech",
+    "img": "/images/categories/computer-and-tech.jpg"
+  },
+  {
+    "id": 5,
+    "title": "toolsEquipments",
+    "img": "/images/categories/tools-equipments.jpg"
+  },
+  {
+    "id": 6,
+    "title": "SportsAndOutdoor",
+    "img": "/images/categories/sports-and-outdoor.jpg"
+  },
+  {
+    "id": 7,
+    "title": "AnimalAndPets",
+    "img": "/images/categories/animal-and-pets.jpg"
+  },
+  {
+    "id": 8,
+    "title": "MachineryTools",
+    "img": "/images/categories/machinery-tools.jpg"
+  },
+  {
+    "id": 9,
+    "title": "MoreCategory",
+    "img": "/images/categories/more-category.jpg"
+  }
+]

@@ -1,45 +1,27 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import DropDown from './dropDown'
-import TamForm from './form'
-import IconeList from './icnonList'
-import Logo from './logo'
-import { useState } from 'react'
-import OffcanvasTam from './navOffCanves'
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Logo from './logo';
+import TamForm from './form';
+import DropDown from './dropDown';
+import IconeList from './icnonList';
 
-const NavBar = () => {
-    const [show, setShow] = useState(false);
+function OffcanvasTam({ show, handleClose }) {
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
     return (
         <>
-            <header className="d-flex flex-column">
-                <div className="w-100">
-                    <Container>
-                        <div className="d-flex w-100 align-items-center justify-content-between  gap-5">
-                            <Logo />
-                            <div className="d-none d-lg-flex w-100">
-                                <TamForm dropDown={1} button={'search'} input={'Search'} />
-                            </div>
-                            <div className="d-none d-lg-flex">
-                                <IconeList />
-                            </div>
-                            <button onClick={handleShow} className='d-flex '>
-                                <svg width="30" height="20" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.08728 0.954102H12.8675M12.8675 4.91007H1.08728M1.08728 9.18921H12.8675" stroke="black" stroke-linecap="round" />
-                                </svg>
 
-
-                            </button>
-                            <OffcanvasTam show={show} handleClose={handleClose} />
-                        </div>
-                    </Container>
-                </div>
-                <div className="w-100 d-none d-lg-flex">
-                    <Container>
-                        <div className=" jusitfy-content-end mt-3 d-none d-lg-flex w-100 align-items-center gap-4">
-                            <ul className='d-flex align-items-center gap-4 navBarList m-0 p-0'>
+            <Offcanvas show={show} onHide={handleClose}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title><Logo /></Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <div className="d-flex flex-column gap-4">
+                        <TamForm button={'search'} input={'search'} />
+                        <IconeList/>
+                        <div className="d-flex flex-column jusitfy-content-start mt-3  d-lg-flex w-100 align-items-start gap-4">
+                            <ul className='d-flex flex-column align-items-start gap-4 navBarList m-0 p-0'>
                                 <li>
                                     <button className='d-flex align-items-center gap-2 allCategoryBtn'>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +63,7 @@ const NavBar = () => {
                                 </li>
 
                             </ul>
-                            <ul className='d-flex align-items-center gap-4 navBarList m-0 p-0 ms-auto'>
+                            <ul className='d-flex flex-column  gap-4 navBarList m-0 p-0 '>
                                 <li>
                                     <DropDown options={['english', 'Arabic']} goal={'langouge'} />
                                 </li>
@@ -90,11 +72,11 @@ const NavBar = () => {
                                 </li>
                             </ul>
                         </div>
-                    </Container>
-                </div>
-            </header>
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
-    )
+    );
 }
 
-export default NavBar
+export default OffcanvasTam;

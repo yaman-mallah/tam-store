@@ -1,6 +1,6 @@
 :root {
   --color-bg: #ffffff;
-  --color-surface: #f8f9fa;
+  --color-surface: #F7FAFC;
   --color-primary: #0D6EFD;
   --color-secondary: #6c757d;
   --color-accent: #ff6f00;
@@ -11,14 +11,27 @@
   --color-danger: #dc3545;
   --color-warning: #ffc107;
   --color-input-bg: #ffffff;
-  --color-hover: #f1f3f5;
+  --color-hover: #E5F1FF;
   --color-footer-bg: #f8f9fa;
+}
+body{
+    background-color: var(--color-surface);
+}
+header{
+  background-color: var(--color-bg);
 }
 img{
   max-width: 100%;
 }
 li,ul,a{
   all: unset;
+}
+button ,a{
+  cursor: pointer;
+}
+button{
+  background-color: transparent;
+  border: none;
 }
 .mainButton{
   background-color: var(--color-primary);
@@ -41,8 +54,53 @@ li,ul,a{
    outline: solid 2px var(--color-primary);
   outline-offset: -2px;
   border-radius: 6px;
+  width: 100%;
   overflow: hidden;
 }
 .navBarBox{
   padding-block: 30px;
+}
+header > *{
+  border: solid 1px var(--color-border);
+  border-width: 0 0 1px 0;
+  padding: 20px 0;
+}
+.tabsBtn{
+  color: var(--color-text-muted);
+  border-radius: 6px;
+  padding-block: 12px;
+  padding-inline: 8px;
+}
+.tabsBtn:hover{
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+.tabsBtn.clicked{
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+.btn2ed{
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: fit-content ;
+  padding: 6px 16px;
+  border-radius: 8px;
+}
+.btn3ed{
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    padding: 6px 16px;
+    border-radius: 8px;
+}
+.joinNowCard{
+  background-color: var(--color-hover);
+  border-radius: 12px;
+}
+.offersCard{
+  border-radius: 12px;  
+  color: var(--color-bg);
+ flex-grow: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
