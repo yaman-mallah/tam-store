@@ -7,7 +7,7 @@ import appStore from '../assets/imgs/Layout/Misc/market-button.png'
 const Footer = () => {
     return (
         <>
-        <div className="pt-5">
+        <footer className="py-5 ">
 
             <Container>
                 <Row>
@@ -83,7 +83,7 @@ const Footer = () => {
                     </Col>
                 </Row>
             </Container>
-        </div>
+        </footer>
         </>
     )
 }

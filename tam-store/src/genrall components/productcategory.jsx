@@ -1,8 +1,13 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { productServices } from '../servicesAPI/productServices';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+
+import { FilterContext } from '../context/filterContext';
 
 function ProductCategoryDropDown() {
+    const { currentFilter, setCurrentFilter } = useContext(FilterContext); 
+    //    useEffect(() => console.log(currentFilter), [currentFilter])
+
     const [productCatList, setProductCatList] = useState([])
     const [showAllCat, setShowAllCat] = useState(true)
     const [showAllBrand, setShowAllBrand] = useState(true)
@@ -13,7 +18,7 @@ function ProductCategoryDropDown() {
     useEffect(() => {
         getCategories()
         getBrand()
-        setProductBrandList(prev=>prev.filter(brand=>brand.brand!=brand.brand))
+        setProductBrandList(prev => prev.filter(brand => brand.brand != brand.brand))
         // console.log(productBrandList)
 
     }, [])
@@ -44,7 +49,14 @@ function ProductCategoryDropDown() {
                                         return (
                                             <li key={index}>
                                                 <label className='d-flex gap-2' >
-                                                    <input type="radio" name='input' />
+                                                    <input
+                                                        type="radio"
+                                                        name='input'
+                                                        onChange={() => {
+                                                            setCurrentFilter(cat)
+                                                            // console.log(currentFilter)
+                                                        }}
+                                                    />
                                                     {cat}
                                                 </label>
                                             </li>
@@ -54,7 +66,14 @@ function ProductCategoryDropDown() {
                                     return (
                                         <li>
                                             <label className='d-flex gap-2' >
-                                                <input type="radio" name='input' />
+                                                <input 
+                                                type="radio" 
+                                                name='input' 
+                                                onChange={() => {
+                                                            setCurrentFilter(cat)
+                                                            // console.log(currentFilter)
+                                                        }}
+                                                />
                                                 {cat}
                                             </label>
                                         </li>
@@ -89,7 +108,11 @@ function ProductCategoryDropDown() {
                                         return (
                                             <li key={index}>
                                                 <label className='d-flex gap-2' >
-                                                    <input type="checkbox" name='input' />
+                                                    <input
+                                                        type="checkbox"
+                                                        name='input'
+
+                                                    />
                                                     {brand.brand}
                                                 </label>
                                             </li>
@@ -97,15 +120,15 @@ function ProductCategoryDropDown() {
                                 })
                                 :
                                 productBrandList.map((brand, index) => {
-                                        if(brand.brand)
-                                    return (
-                                        <li key={index}>
-                                            <label className='d-flex gap-2' >
-                                                <input type="checkbox" name='input' />
-                                                {brand.brand}
-                                            </label>
-                                        </li>
-                                    )
+                                    if (brand.brand)
+                                        return (
+                                            <li key={index}>
+                                                <label className='d-flex gap-2' >
+                                                    <input type="checkbox" name='input' />
+                                                    {brand.brand}
+                                                </label>
+                                            </li>
+                                        )
                                 })
 
                         }

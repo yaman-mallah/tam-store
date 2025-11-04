@@ -173,7 +173,11 @@ header > *{
 }
 
 /* footer */
+footer{
+  background-color: var(--color-bg);
+}
 .footerList a{
+
   color: var(--color-secondary);
   margin-bottom: 20px ;
 }

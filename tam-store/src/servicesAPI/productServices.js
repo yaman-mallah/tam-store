@@ -25,5 +25,12 @@ export const productServices = {
         console.log(url)
         return fetch(url)
             .then((res => res.json()))
+    },
+    getApiByCat(option){
+        let url = `${ApiObject.BASE_URL}${ApiObject.END_POINTS.CATEGORY}/${option}`
+        console.log(url)
+        return fetch(url)
+        .then(res=>res.json())
     }
 }
+//'https://dummyjson.com/products/category/smartphones'

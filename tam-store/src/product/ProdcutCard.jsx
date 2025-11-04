@@ -10,7 +10,7 @@ const ProdcutCard = ({ name,id, img, price, stars, col }) => {
     }
     return (
         <>
-            <Col lg={3}>
+            <Col lg={3} md={6}>
                
                 <NavLink 
                 to={`/products/${id}`} 
@@ -18,7 +18,7 @@ const ProdcutCard = ({ name,id, img, price, stars, col }) => {
                 >
                 <div className="productCard">
 
-                    <img src={img} alt={name} />
+                    <img className='w-100' src={img} alt={name} />
                     <div className="d-flex ">
                         <div className="d-flex flex-column w-100" >
                             <p className="sub-text">${price ? price : 0.00}</p>
