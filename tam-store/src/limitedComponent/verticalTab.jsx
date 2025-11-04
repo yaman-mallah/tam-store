@@ -11,12 +11,12 @@ const VerticalTabDisplay = () => {
     let [visibleImage, setVisibleImage] = useState()
     let changeCurrentImage = (e) => {
         setVisible(e.target.id)
-        console.log(visible)
+        // console.log(visible)
     }
     fetch('/apis/home.json')
         .then((respones) => {
             if (!respones.ok) {
-                console.log(respones)
+                // console.log(respones)
                 throw new Error('image not found')
             }
             else {
@@ -27,7 +27,7 @@ const VerticalTabDisplay = () => {
 
             data.map((element) => {
                 if (element.title == visible) {
-                    console.log(element.img)
+                    // console.log(element.img)
                     setVisibleImage(element.img)
                 }
             })
@@ -36,7 +36,7 @@ const VerticalTabDisplay = () => {
             console.error(error.message)
         })
         .finally(() => {
-            console.log('fetch is done')
+            // console.log('fetch is done')
         })
 
     return (

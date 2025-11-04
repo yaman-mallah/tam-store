@@ -1,14 +1,16 @@
 :root {
   --color-bg: #ffffff;
+  --color-aqua:#D1E7FF;
   --color-surface: #F7FAFC;
   --color-primary: #0D6EFD;
   --color-secondary: #6c757d;
   --color-accent: #ff6f00;
   --color-text: #212529;
-  --color-text-muted: #6c757d;
+  --color-text-muted: #606060;
   --color-border: #e0e0e0;
   --color-success: #28a745;
   --color-danger: #dc3545;
+  --color-bg-danger:#FFE3E3;
   --color-warning: #ffc107;
   --color-input-bg: #ffffff;
   --color-hover: #E5F1FF;
@@ -91,6 +93,7 @@ header > *{
     color: var(--color-primary);
     padding: 6px 16px;
     border-radius: 8px;
+    
 }
 .joinNowCard{
   background-color: var(--color-hover);
@@ -103,4 +106,74 @@ header > *{
  display: flex;
  justify-content: center;
  align-items: center;
+}
+.wishListBtn{
+  border: solid 1px var(--color-text-muted);
+  border-radius: 6px;
+  padding: 6px;
+  height: fit-content ;
+  width: fit-content;
+}
+
+/* services section */
+.serviceInfoBox {
+  padding: 20px;
+  width: 100%;
+  background-color: var(--color-bg);
+  position: relative;
+}
+.serviceInfoBox p{
+  max-width: 60%;
+}
+.ServicesCard img{
+  width: 100%;
+}
+.ServicesCard{
+  border-radius: 12px;
+  overflow: hidden;
+}
+.balcBg{
+  background-color: var(--color-text);
+}
+.iconBox{
+  position: absolute;
+  height:55px ;
+  width:55px ;
+  border-radius: 50%;
+  border: solid 2px var(--color-bg);
+  background-color: var(--color-aqua);
+  inset-block-start: -27px;
+  inset-inline-end: 30px;
+  /* align-items: center; */
+}
+
+/* category filter */
+.categoryList{
+  height: fit-content;
+  overflow: hidden;
+  max-height: 140px;
+  transition: max-height 0.5s ease-in-out;
+}
+.accordion-button:not(.collapsed){
+  background-color: transparent;
+}
+.categoryList.showAll{
+  max-height: 1000px;
+}
+
+/* product card */
+.productCard{
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: solid 1px var(--color-border);
+}
+
+/* footer */
+.footerList a{
+  color: var(--color-secondary);
+  margin-bottom: 20px ;
 }

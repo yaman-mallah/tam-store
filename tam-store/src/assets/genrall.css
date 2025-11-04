@@ -15,7 +15,7 @@ p {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0px;
-  text-align: center;
+
   vertical-align: middle;
   color: var(--color-secondary);
 }
@@ -26,6 +26,15 @@ p {
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0px;
+}
+h4 {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 28px;
+  letter-spacing: -0.2px;
 }
 h5 {
   font-family: "Inter", sans-serif;
@@ -61,6 +70,6 @@ h6 {
   line-height: 100%;
   letter-spacing: 0px;
 }
-body{
-    background-color: var(--color-bg);
+body {
+  background-color: var(--color-bg);
 }

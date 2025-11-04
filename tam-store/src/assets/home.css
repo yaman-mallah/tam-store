@@ -9,6 +9,7 @@
   inset-block-start: 50px;
 }
 .heroBox{
+    margin-block: 30px;
     background-color: var(--color-bg);
     border-radius: 15px;
     border: solid 1px var(--color-border);
@@ -21,6 +22,55 @@
     border: solid 1px var(--color-border);
     padding: 10px;
     background-color: var(--color-bg);
-    
-    
+}
+.LookOnProductSection{
+  margin-block: 60px;
+}
+.lookonproductBox{
+  background-color: var(--color-bg);
+  border-radius: 25px;
+  overflow: hidden;
+  
+}
+
+/* limited offer section */
+.LimitedOfferBox{
+  background-color: var(--color-bg);
+  margin-block: 60px;
+  border: solid 1px color-mix(in srgb, var(--color-secondary) 40%, transparent 100%) ;
+  border-radius: 12px;
+}
+.timeBox{
+  background-color: var( --color-text-muted);
+  color: var(--color-bg);
+  padding: 10px;
+  border-radius: 6px;
+  
+}
+.timerBox{
+  padding: 12px;
+}
+.discountBox{
+  background-color: var(--color-bg-danger);
+  color: var(--color-danger);
+  padding: 3px 6px;
+  border-radius: 20px;
+}
+.offerProductCard{
+  padding: 13px;
+
+  height: 100%;
+  
+}
+.productCardCat img{
+      max-width: 70%;
+}
+
+
+.productCardShow{
+  background-color: var(--color-bg);
+  border-radius: 6px;
+  padding: 15px;
+  border: solid 1px var(--color-secondary);
+
 }
