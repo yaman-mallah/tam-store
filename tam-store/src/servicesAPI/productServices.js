@@ -31,6 +31,12 @@ export const productServices = {
         console.log(url)
         return fetch(url)
         .then(res=>res.json())
+    },
+    getSinglePrd(id){
+        let url = `${ApiObject.BASE_URL}${ApiObject.END_POINTS.PRODUCT}/${id}`
+        console.log(url)
+        return fetch(url)
+        .then(res=>res.json())
     }
 }
-//'https://dummyjson.com/products/category/smartphones'
+//'https://dummyjson.com/products/1

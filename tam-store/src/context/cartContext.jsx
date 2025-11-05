@@ -5,10 +5,11 @@ export const CartContext =  createContext({})
 import React from 'react'
 
 export const CartContextProvider = ({ children }) => {
-    const [productIncart, setProductIncart] = useState('')
+    let products = localStorage.getItem(JSON.stringify('product-in-cart'))
+
+    const [productIncart, setProductIncart] = useState(products?products:[])
     useEffect(() => {
-        let products = localStorage.getItem(JSON.stringify('product-in-cart'))
-        if (products)
+        if (products&&!productIncart)
             setProductIncart(products)
 
     }, [])

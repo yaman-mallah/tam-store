@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { data, useParams } from 'react-router'
 import Productshow from './Productshow'
 import MainButton from '../genrall components/mainButton'
 import Btn2ed from '../genrall components/2edBtn'
-
+import { CartContext } from '../context/cartContext'
 const ProductDetails = () => {
+    const { productIncart, setProductIncart } = useContext(CartContext)
+    useEffect(()=>{
+        console.log(productIncart)
+        if(productIncart.length>0)
+        localStorage.setItem('product-in-cart',productIncart)
+
+    },[productIncart])
+    let [productArray, setProductArray] = useState([])
     let [productDet, setProductDet] = useState({})
     let { id } = useParams()
     let [loading, setLoading] = useState(true)
-    console.log(id)
+    // console.log(id)
 
     useEffect(() => {
         fetch(`https://dummyjson.com/products/${id}`)
             .then(res => res.json())
             .then((data) => {
                 setProductDet(data)
-                console.log(data)
+                // console.log(data)
             })
             .finally(() => {
                 console.log('done')
@@ -36,7 +44,8 @@ const ProductDetails = () => {
                         <Col lg={5}>
                             <div className="d-flex flex-column gap-3 pt-4">
                                 <p className="subText">
-                                    {productDet.availabilityStatus
+                                    {
+                                        productDet.availabilityStatus
                                     }
                                 </p>
                                 <h2>
@@ -98,7 +107,18 @@ const ProductDetails = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                    <MainButton text={'Send inquiry'}/>
+                                <button
+                                    className={!productIncart.includes(id)?"btn btn-primary":'btn btn-secondary'}
+                                    onClick={() => {
+                                        setProductIncart(prev =>
+                                            prev.includes(id)
+                                                ? prev.filter(item => item !== id)
+                                                : [...prev, id]
+                                        )
+                                    }}
+                                >
+                                    {productIncart.includes(id) ? 'remove' : 'order now'}
+                                </button>
 
                             </div>
                         </Col>
