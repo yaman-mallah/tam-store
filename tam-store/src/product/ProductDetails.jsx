@@ -10,7 +10,7 @@ const ProductDetails = () => {
     useEffect(()=>{
         console.log(productIncart)
         if(productIncart.length>0)
-        localStorage.setItem('product-in-cart',productIncart)
+        localStorage.setItem('product-in-cart',JSON.stringify(productIncart))
 
     },[productIncart])
     let [productArray, setProductArray] = useState([])
